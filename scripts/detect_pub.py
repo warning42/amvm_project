@@ -17,9 +17,9 @@ from pycoral.utils.edgetpu import run_inference
 
 def main():
     global cap
-    default_model_dir = '/home/starboy0402/catkin_ws/src/image_classification_topic/scripts/'
+    default_model_dir = '/edit_user_dir/'
     default_model = 'mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite'
-    default_labels = 'coco_labels_backpack.txt'
+    default_labels = 'coco_labels_person.txt'
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', help='.tflite model path',
                         default=os.path.join(default_model_dir,default_model))
@@ -93,7 +93,7 @@ def append_objs_to_img(cv2_im, inference_size, objs, labels):
         size_of_box = (x1-x0) * (y1-y0)
         percent = int(100 * obj.score)
         label = '{}% {}'.format(percent, labels.get(obj.id, obj.id))
-        if labels.get(obj.id, obj.id) == 'backpack':
+        if labels.get(obj.id, obj.id) == 'person':
             cv2_im = cv2.rectangle(cv2_im, (x0, y0), (x1, y1), (0, 255, 0), 2)
             cv2_im = cv2.putText(cv2_im, label + f'{size_of_box}', (x0, y0+30),
                                 cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 0, 0), 2)
