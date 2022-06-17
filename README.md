@@ -16,7 +16,9 @@ opencv: 이미지 프레임 캡쳐를 위한 라이브러리
 arduino program: opencr board로 ino파일 업로드를 위함
 
 ## model
-구글 코랄에서 제공하는 edge tpu 전용 딥러닝 모델인 mobilenet v2 for edgetpu를 이용
+라즈베리파이의 낮은 GPU 성능으로 인해 별도의 병렬 연산장치인 google coral accelerator(edge tpu)를 이용하였으며,
+
+구글 코랄에서 제공하는 edge tpu 전용 딥러닝 모델인 mobilenet v2 for edgetpu를 사용
 
 ## label
 현재는 사람만 인식하게 코드(detect_pub.py, coco_labels_person 참고)를 작성하였으나, 인식 객체를 변경하고 싶다면
