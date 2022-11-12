@@ -33,4 +33,5 @@ motor_control.py: 객체인식으로부터 얻은 토픽과 더불어 초음파 
 ## opencr
 amvm_opencr.ino: 받은 토픽을 기반으로 각 모터로 시리얼로 제어 신호를 전달
 
-
+## 시연영상
+https://www.youtube.com/watch?v=v50bKL9I5d8
